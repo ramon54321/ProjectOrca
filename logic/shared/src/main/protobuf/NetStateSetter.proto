@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package orca.protobuf;
+
+message NetStateSetter {
+  oneof sealed_value {
+    SetGameName gameName = 1;
+    SetGameSeed gameSeed = 2;
+  }
+}
+
+message SetGameName {
+  string name = 1;
+}
+
+message SetGameSeed {
+  uint32 seed = 1;
+}
